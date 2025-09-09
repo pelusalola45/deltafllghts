@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Budget Flights & Top Destinations</title>
+  <meta name="description" content="Discover cheap flights and top tourist sites. Contact us only through the inquiry form on this page.">
+  <style>
+    :root{
+      --bg:#fafafa;
+      --card:#ffffff;
+      --muted:#65737e;
+      --accent:#0066cc;
+      --accent-2:#00a3b4;
+      --radius:14px;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#f0f6ff 60%);
+      color:#102a43;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:32px;
+    }
+    .container{max-width:1100px;margin:0 auto}
+    header{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px
+    }
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{
+      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px;box-shadow:0 6px 18px rgba(0,96,192,0.12)
+    }
+    h1{font-size:28px;margin:0}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:1fr 380px;gap:28px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr} .container{padding:0 12px}}
+
+    .card{background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:0 6px 18px rgba(16,42,67,0.06)}
+
+    .hero{display:flex;flex-direction:column;gap:12px;padding:28px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .search-simulation{display:flex;gap:8px;align-items:center}
+    .search-simulation input{padding:10px 12px;border-radius:10px;border:1px solid #e6eef8;width:220px}
+    .btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+    .btn.secondary{background:transparent;color:var(--accent);border:2px solid rgba(0,102,204,0.12)}
+
+    .features{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+    .feature{flex:1;min-width:140px;padding:12px;border-radius:10px;background:linear-gradient(180deg,#ffffff,#f8fbff);border:1px solid rgba(2,24,56,0.03)}
+
+    .destinations{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    @media (max-width:900px){.destinations{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:560px){.destinations{grid-template-columns:1fr}}
+    .dest{padding:12px;border-radius:12px;background:linear-gradient(180deg,#ffffff,#fbfdff);border:1px solid rgba(2,24,56,0.03)}
+    .dest h3{margin:6px 0 6px;font-size:16px}
+    .dest p{margin:0;color:var(--muted);font-size:14px}
+
+    .tips{margin-top:18px}
+    .tips li{margin-bottom:8px}
+
+    /* Right column / form */
+    aside form{display:flex;flex-direction:column;gap:12px}
+    label{font-size:13px;color:#123;color:var(--muted)}
+    input[type="text"],input[type="email"],select,textarea{padding:10px 12px;border-radius:10px;border:1px solid #e6eef8;width:100%;font-size:14px}
+    textarea{min-height:120px;resize:vertical}
+    .note{font-size:13px;color:var(--muted)}
+
+    footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* submission overlay */
+    .overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(4,12,24,0.4);opacity:0;pointer-events:none;transition:opacity .18s}
+    .overlay.show{opacity:1;pointer-events:auto}
+    .overlay .modal{background:white;padding:22px;border-radius:12px;max-width:520px;width:90%;text-align:center}
+    .close-x{margin-top:12px;display:inline-block}
+
+    /* tiny accessibility helpers */
+    .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">BF</div>
+        <div>
+          <h1>Budget Flights & Destinations</h1>
+          <p class="lead">Smart tips, local highlights, and practical ways to book cheaper flights. Contact us only via the form on this page.</p>
+        </div>
+      </div>
+      <div aria-hidden="true">✈️</div>
+    </header>
+
+    <main class="grid" role="main">
+      <section>
+        <article class="card hero" aria-labelledby="hero-title">
+          <div>
+            <h2 id="hero-title">Find Cheap Flights. Explore Amazing Places.</h2>
+            <p class="lead">We highlight budget-friendly fares and must-see tourist spots — from iconic landmarks to hidden gems. Save money on flights and spend it on experiences.</p>
+          </div>
+
+          <div class="cta-row" aria-hidden="false">
+            <div class="search-simulation" role="search" aria-label="Simulated flight search">
+              <input type="text" placeholder="From: City or airport">
+              <input type="text" placeholder="To: Destination">
+              <input type="text" placeholder="Dates (flexible)">
+              <button class="btn" onclick="simulateSearch()" type="button">Search</button>
+            </div>
+            <button class="btn secondary" onclick="scrollToForm()">Contact via form</button>
+          </div>
+
+          <div class="features" aria-hidden="false">
+            <div class="feature">
+              <strong>Cheap Fare Tips</strong>
+              <p>Learn when to book, how to compare fares, and how to use flexible dates to save.</p>
+            </div>
+            <div class="feature">
+              <strong>Top Destinations</strong>
+              <p>Curated tourist sites and local highlights for budget travelers.</p>
+            </div>
+            <div class="feature">
+              <strong>Practical Booking</strong>
+              <p>Advice on baggage, layovers, and how to avoid surprise fees.</p>
+            </div>
+          </div>
+
+          <h3 style="margin-top:18px">Featured Tourist Sites</h3>
+          <div class="destinations" aria-live="polite">
+            <article class="dest" tabindex="0">
+              <h3>Old Town Waterfront</h3>
+              <p>Historic streets, vibrant markets, and budget-friendly local food near the harbor.</p>
+            </article>
+            <article class="dest" tabindex="0">
+              <h3>Sunset Cliff Lookout</h3>
+              <p>Panoramic views that don't cost a thing — perfect for evening strolls and photography.</p>
+            </article>
+            <article class="dest" tabindex="0">
+              <h3>Riverside Park Trails</h3>
+              <p>Free walking paths, picnic spots, and family-friendly activities close to the city center.</p>
+            </article>
+            <article class="dest" tabindex="0">
+              <h3>Artisan Quarter</h3>
+              <p>Local crafts, street art, and small galleries where you can support local makers.</p>
+            </article>
+            <article class="dest" tabindex="0">
+              <h3>Mountain Viewpoint</h3>
+              <p>A short hike rewards you with sweeping views — an inexpensive way to connect with nature.</p>
+            </article>
+            <article class="dest" tabindex="0">
+              <h3>Historic Railway Station</h3>
+              <p>Architectural beauty and low-cost tours explaining the region's history.</p>
+            </article>
+          </div>
+
+          <div class="tips card" style="margin-top:18px">
+            <h4>How to Book Cheap Flights</h4>
+            <ul>
+              <li>Be flexible with dates — midweek departures are often cheaper.</li>
+              <li>Compare multiple search engines and check nearby airports.</li>
+              <li>Book connecting flights separately only if the schedule is reliable.</li>
+              <li>Sign up for price alerts (use a private tool) and watch for flash sales.</li>
+              <li>Travel light to avoid baggage fees — many cheap fares exclude checked bags.</li>
+            </ul>
+          </div>
+        </article>
+
+        <section class="card" style="margin-top:18px">
+          <h3>Responsible Travel & Budgeting</h3>
+          <p class="lead">Cheap flights let you visit more places, but travel responsibly: respect local rules, choose sustainable options where possible, and plan a budget that supports local communities.</p>
+        </section>
+
+      </section>
+
+      <aside>
+        <div class="card" id="contact-card">
+          <h3>Contact / Inquiry Form</h3>
+          <p class="note">We do not publish direct contact details or social media. Reach out using this form only.</p>
+          <form id="inquiryForm" onsubmit="return handleSubmit(event)" novalidate>
+            <label for="fullname">Full name</label>
+            <input id="fullname" name="fullname" type="text" required placeholder="Your name">
+
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com">
+
+            <label for="destination">Destination of interest</label>
+            <input id="destination" name="destination" type="text" placeholder="City or region">
+
+            <label for="budget">Estimated budget for flights (optional)</label>
+            <select id="budget" name="budget">
+              <option value="">Select a range</option>
+              <option>$100 - $300</option>
+              <option>$300 - $600</option>
+              <option>$600 - $1000</option>
+              <option>Prefer not to say</option>
+            </select>
+
+            <label for="message">Message (what are you looking for?)</label>
+            <textarea id="message" name="message" placeholder="Tell us which flights, dates, or tips you need..."></textarea>
+
+            <div style="display:flex;gap:10px;align-items:center;">
+              <button class="btn" type="submit">Send inquiry</button>
+              <button class="btn secondary" type="button" onclick="resetForm()">Clear</button>
+            </div>
+
+            <p class="note" style="margin-top:8px">Privacy: this demo page does not store personal data. In production, form submissions would be handled securely on the server.</p>
+          </form>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <p>No phone numbers, no public email addresses, and no social media links are shown — contact only through the form above.</p>
+      <p>&copy; <span id="year"></span> Budget Flights & Destinations</p>
+    </footer>
+  </div>
+
+  <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="thanks-title">
+    <div class="modal card">
+      <h3 id="thanks-title">Thank you — inquiry recorded</h3>
+      <p id="thanks-msg">We received your message. This demo HTML simulates a successful submission and does not transmit data to an external server.</p>
+      <button class="btn close-x" onclick="closeOverlay()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function simulateSearch(){
+      alert('This is a demo search to preview how to find cheap flights. Use the contact form to request personalized help.');
+    }
+
+    function scrollToForm(){
+      document.getElementById('contact-card').scrollIntoView({behavior:'smooth',block:'center'});
+    }
+
+    function validateEmail(email){
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function handleSubmit(e){
+      e.preventDefault();
+      var name = document.getElementById('fullname').value.trim();
+      var email = document.getElementById('email').value.trim();
+      if(!name){
+        alert('Please enter your name.');
+        return false;
+      }
+      if(!validateEmail(email)){
+        alert('Please enter a valid email address.');
+        return false;
+      }
+      // Show overlay to simulate successful submission.
+      document.getElementById('overlay').classList.add('show');
+      return false;
+    }
+
+    function closeOverlay(){
+      document.getElementById('overlay').classList.remove('show');
+      // Optionally clear the form after "submission"
+      document.getElementById('inquiryForm').reset();
+    }
+
+    function resetForm(){
+      if(confirm('Clear the form?')){
+        document.getElementById('inquiryForm').reset();
+      }
+    }
+  </script>
+</body>
+</html>
