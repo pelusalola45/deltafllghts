@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargando...</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .spinner {
+            width: 80px;
+            height: 80px;
+            border: 6px solid #e3e3e3;
+            border-top: 6px solid #1e3a8a;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: #1e3a8a;
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .progress-bar {
+            width: 200px;
+            height: 4px;
+            background-color: #e3e3e3;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #1e3a8a;
+            width: 0%;
+            animation: progress 5s ease-in-out forwards;
+            border-radius: 2px;
+        }
+
+        @keyframes progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        /* Responsividad para dispositivos móviles */
+        @media (max-width: 768px) {
+            .spinner {
+                width: 60px;
+                height: 60px;
+                border-width: 4px;
+            }
+
+            .loading-text {
+                font-size: 1rem;
+            }
+
+            .progress-bar {
+                width: 150px;
+                height: 3px;
+            }
+
+            .loading-container {
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .spinner {
+                width: 50px;
+                height: 50px;
+                border-width: 3px;
+            }
+
+            .loading-text {
+                font-size: 0.9rem;
+            }
+
+            .progress-bar {
+                width: 120px;
+            }
+
+            .loading-container {
+                gap: 1rem;
+            }
+        }
+
+        /* Animación de fade out para la transición */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container" id="loadingContainer">
+        <div class="spinner"></div>
+    </div>
+
+    <script>
+        // Función para redirigir después de 5 segundos
+        function redirectAfterLoading() {
+            setTimeout(() => {
+                // Agregar efecto fade out
+                document.getElementById('loadingContainer').classList.add('fade-out');
+                
+                // Esperar a que termine la animación y luego redirigir
+                setTimeout(() => {
+                    // Cambia esta URL por la página a la que quieres redirigir
+                    window.location.href = 'booking-page.html';
+                }, 500);
+            }, 5000);
+        }
+
+        // Iniciar la carga cuando se carga la página
+        window.addEventListener('load', redirectAfterLoading);
+
+        // Fallback en caso de que 'load' no se dispare
+        document.addEventListener('DOMContentLoaded', redirectAfterLoading);
+    </script>
+</body>
+</html>

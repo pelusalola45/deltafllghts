@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delta Airlines - Reservar Vuelos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/fl.css"> 
+</head>
+<body>
+  <div class="desktop-view">
+    <header class="header">
+      <div class="nav-container">
+        <a href="#" class="logo">
+          <img src="img/Delta Air Lines.svg" alt="">
+          <img src="img/Skyteam.svg" style="margin-left: 4%;" alt="">
+        </a>
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="#" class="active">BOOK</a></li>
+            <li><a href="#">CHECK-IN</a></li>
+            <li><a href="#">MY TRIPS</a></li>
+            <li><a href="#">FLIGHT STATUS</a></li>
+            <li><a href="#">Travel Info</a></li>
+            <li><a href="#">SkyMiles</a></li>
+            <li><a href="#">Need Help?</a></li>
+          </ul>
+        </nav>
+        <div class="nav-actions">
+          <a href="#" class="sign-up">SIGN UP</a>
+          <a href="#" class="log-in">LOG IN</a>
+          <i class="fas fa-bell notification"></i>
+          <i class="fas fa-search search-icon"></i>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="flight-outbound-section">
+        <div class="flight-info">
+          <div class="outbound-title">
+            <h3 class="flight-title">Outbound</h3>
+            <a href="index.html" class="change-flight-link">Change Flight</a>
+          </div>
+          <div class="route-info">
+            <span class="airport-code">BOG</span>
+            <i class="fas fa-chevron-right arrow-icon"></i>
+            <span class="airport-code">MIA</span>
+          </div>
+          <div class="datetime-info">
+            <span class="flight-date">Fri, Sep 12</span>
+            <!-- <span class="flight-time">1:35am - 6:31am</span> -->
+          </div>
+          <div class="flight-details">
+            <p class="flight-class">Premium Economy</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="products-section">
+        <div class="products-container">
+          <div class="left-content">
+            <h3 class="section-title">Explore Our Products</h3>
+            <p class="description">
+              Fares are round-trip per passenger, including taxes and fees. Additional <a href="#" class="baggage-link">baggage fees</a> may apply. Delta flights may be listed first. Services and amenities may <a href="#" class="vary-change-link">vary or change</a>.
+            </p>
+          </div>
+          <div class="products-grid">
+            <div class="product-item">
+              <h4 class="product-title">Main</h4>
+              <div><img src="img/imgi_5_Main.png" style="width:55%" alt=""></div>
+            </div>
+            <div class="product-item">
+              <h4 class="product-title">Comfort</h4>
+              <div><img src="img/imgi_6_Comfort+.png" style="width:55%" alt=""><span class="comfort-plus">+</span></div>
+            </div>
+            <div class="product-item">
+              <h4 class="product-title">First</h4>
+              <div><img src="img/imgi_7_Premium Select.png" style="width:55%" alt=""></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="flightsContainer">
+        <section class="flight-details-section">
+          <div class="flight-container">
+            <div class="flight-info-card">
+              <div class="nonstop-badge">Free Wi-Fi for Members</div>
+              <div class="flight-number">
+                <div><img src="img/imgi_12_Delta-Partner-Logo.png" alt=""></div>
+                <a href="#" class="flight-code">DL6073<sup>1</sup></a>
+                <span class="duration" aria-hidden="true"></span>
+              </div>
+
+              <div class="flight-timeline">
+                <div class="time-display">
+                  <span class="departure-time">--:--</span>
+                  <img src="img/descarga.svg" alt="">
+                  <span class="arrival-time">--:--</span>
+                </div>
+                <div class="timeline-line"></div>
+                <div class="airports">
+                  <span class="airport-code">BOG</span>
+                  <span class="nonstop-text">Nonstop</span>
+                  <span class="airport-code">MIA</span>
+                </div>
+              </div>
+
+              <p class="airline-operated"><sup>1</sup> Operated by Delta.</p>
+              <div class="action-buttons">
+                  <!-- <a href="#" class="btn-details">Details</a>
+                  <a href="#" class="btn-seats">Seats</a> -->
+              </div>
+            </div>
+
+            <div class="fare-card light" role="button" aria-label="Light fare">
+              <h3 class="fare-type">Light</h3>
+              <div class="fare-price">
+                <span class="from-text">From</span>
+                <span class="price">$75</span>
+                <span class="trip-type">Round Trip</span>
+              </div>
+            </div>
+
+            <div class="fare-card comfort">
+              <h3 class="fare-type">Comfort</h3>
+              <div class="fare-price">
+                <span class="from-text">From</span>
+                <span class="price" style="opacity:0.3;">$</span>
+                <span class="trip-type" style="opacity:0.3;">Round Trip</span>
+              </div>
+              <div class="sold-out">Sold Out</div>
+            </div>
+
+            <div class="fare-card premium">
+              <h3 class="fare-type">Premium Economy</h3>
+              <div class="fare-price">
+                <span class="from-text">From</span>
+                <span class="price">$550</span>
+                <span class="trip-type">Round Trip</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="experience-section" id="experienceSection">
+        <div class="experience-header">
+          <h2 class="experience-title">Select an Experience to Continue</h2>
+          <button class="close-button" onclick="closeExperienceSection()">×</button>
+        </div>
+
+        <div class="experience-content">
+          <div class="experience-cards">
+            <!-- Light Experience Card -->
+            <div class="experience-card light-card">
+              <div class="exp-header">
+                <div>
+                  <h3 class="exp-title">Light</h3>
+                  <p class="exp-subtitle">Most Restrictive</p>
+                </div>
+              </div>
+
+              <ul class="experience-features">
+                <li>
+                  <i class="fas fa-times-circle feature-icon restricted"></i>
+                  <span class="feature-text">Cancel for partial eCredit, no changes allowed<sup>7</sup></span>
+                </li>
+                <li>
+                  <i class="fas fa-times-circle feature-icon restricted"></i>
+                  <span class="feature-text">Select seat(s) before check-in<sup>8</sup></span>
+                </li>
+                <li>
+                  <i class="fas fa-times-circle feature-icon restricted"></i>
+                  <span class="feature-text">Earn MQDs<sup>9</sup></span>
+                </li>
+                <li>
+                  <i class="fas fa-times-circle feature-icon restricted"></i>
+                  <span class="feature-text">Last to board<sup>4</sup></span>
+                </li>
+                <li>
+                  <i class="fas fa-times-circle feature-icon restricted"></i>
+                  <span class="feature-text">Eligible for upgrades<sup>5</sup></span>
+                </li>
+              </ul>
+
+              <a href="#" class="view-link">View All Restrictions</a>
+
+              <div class="accept-restrictions">
+                <input type="checkbox" id="acceptLight">
+                <label for="acceptLight">Accept Restrictions</label>
+              </div>
+
+              <div class="experience-footer">
+                <div class="price-section">
+                  <div class="price-label">Round Trip From</div>
+                  <div class="price-value">$75</div>
+                </div>
+                <button class="select-button" onclick="selectExperience('light', 414)">Select</button>
+              </div>
+            </div>
+
+            <!-- Plus Experience Card -->
+            <div class="experience-card plus-card">
+              <div class="exp-header">
+                <div>
+                  <h3 class="exp-title">Plus</h3>
+                  <p class="exp-subtitle">More Freedom and Flexibility</p>
+                </div>
+              </div>
+
+              <ul class="experience-features">
+                <li>
+                  <i class="fas fa-check-circle feature-icon allowed"></i>
+                  <span class="feature-text">Cancel for partial eCredit<sup>8</sup></span>
+                </li>
+                <li>
+                  <i class="fas fa-check-circle feature-icon allowed"></i>
+                  <span class="feature-text">Change your flight<sup>9</sup></span>
+                </li>
+                <li>
+                  <i class="fas fa-check-circle feature-icon allowed"></i>
+                  <span class="feature-text">Select seat(s) before check-in<sup>10</sup></span>
+                </li>
+                <li>
+                  <i class="fas fa-check-circle feature-icon allowed"></i>
+                  <span class="feature-text">Earn MQDs<sup>11</sup></span>
+                </li>
+                <li>
+                  <i class="fas fa-check-circle feature-icon allowed"></i>
+                  <span class="feature-text">Board earlier than Light</span>
+                </li>
+              </ul>
+
+              <a href="#" class="view-link">View All Features</a>
+
+              <div class="experience-footer">
+                <div class="price-section">
+                  <div class="price-label">Round Trip From</div>
+                  <div class="price-value">$534</div>
+                </div>
+                <button class="select-button"> <a href="one-way-back.html">Select</a></button>
+               
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="experience-footer-section">
+          <p class="footer-text">
+            Experience selection applies to your trip.
+            <a href="#" class="footer-link">View Terms and Conditions</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Mantén tu script externo si existe -->
+      <script src="js/reoundTrip.js"></script>
+
+    </main>
+  </div>
+  
+</body>
+</html>

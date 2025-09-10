@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Airlines - Reservar Vuelos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Arial:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="font/AABA9C13AF9C5C638.woff2">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Vista Móvil -->
+    <div class="mobile-view">
+        <!-- Header -->
+        <header class="header">
+            <button class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="auth-buttons">
+                <button class="sign-up-btn">SIGN UP</button>
+                <button class="log-in-btn">LOG IN</button>
+                <div class="notification">
+                    <i class="fas fa-bell"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <button class="nav-tab active">BOOK</button>
+            <button class="nav-tab">CHECK-IN</button>
+            <button class="nav-tab">MY TRIPS</button>
+        </nav>
+
+                    <!-- Booking Section --> 
+            <section class="booking-section" style="margin-bottom: 0; padding-bottom: 0;">
+                <div class="route-selector">
+                    <div class="origin">
+                        <div class="airport-code">IAD</div>
+                        <div class="city-name">Washington D. C.</div>
+                    </div>
+                    <div class="route-arrow">⟷</div>
+                    <div class="destination">
+                        <div class="airport-code destination-placeholder">To</div>
+                        <div class="city-name destination-placeholder">Your Destination</div>
+                    </div>
+                </div>
+                <button class="swap-btn">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </section>
+
+            <script>
+            document.querySelector('.booking-section').addEventListener('click', function () {
+                window.location.href = 'copy.html'; // Cambia por tu URL
+            });
+            </script>
+
+
+        <!-- Main Content -->
+        <main class="main-content" style="background-image: url(img/imgi_17_wf-1476415-v1-1600-624.jpg);">
+            <img src="img/DL-LA-partner.webp" style="width: 50%; margin-bottom: 0; margin-top: 15%;" alt="Delta and LATAM Airlines airplane" class="airplane-image">
+
+            <h1 class="tagline" style="margin-bottom: 0; margin-top: 2%;">SOUTH + NORTH</h1>
+            
+            <p class="description">
+                Are meant to be together. Delta and LATAM Airlines offer you more than 300 destinations to explore.
+            </p>
+
+            <button class="learn-more-btn">LEARN MORE</button>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="bottom-nav-item">
+                <i class="fas fa-umbrella-beach"></i>
+                <span>VACATIONS</span>
+            </button>
+            <button class="bottom-nav-item">
+                <i class="fas fa-car"></i>
+                <span>CARS<br>& STAYS</span>
+                <i class="fas fa-external-link-alt arrow"></i>
+            </button>
+            <button class="bottom-nav-item">
+                <i class="fas fa-ship"></i>
+                <span>CRUISES</span>
+                <i class="fas fa-external-link-alt arrow"></i>
+            </button>
+            <button class="bottom-nav-item">
+                <i class="fas fa-gift"></i>
+                <span>GIFT CARDS</span>
+                <i class="fas fa-external-link-alt arrow"></i>
+            </button>
+        </nav>
+    </div>
+    
+    <!-- Vista Escritorio -->
+    <div class="desktop-view">
+        <header class="header">
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <img src="img/Delta Air Lines.svg" alt="">
+                    <img src="img/Skyteam.svg" style="margin-left: 4%;" alt="">
+                </a>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#" class="active">BOOK</a></li>
+                        <li><a href="#">CHECK-IN</a></li>
+                        <li><a href="#">MY TRIPS</a></li>
+                        <li><a href="#">FLIGHT STATUS</a></li>
+                        <li><a href="#">Travel Info</a></li>
+                        <li><a href="#">SkyMiles</a></li>
+                        <li><a href="#">Need Help?</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="nav-actions">
+                    <a href="#" class="sign-up">SIGN UP</a>
+                    <a href="#" class="log-in">LOG IN</a>
+                    <i class="fas fa-bell notification"></i>
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+            </div>
+        </header>
+        <!-- escritorio -->
+        <main class="main-content">
+            <section class="search-section">
+                <div class="search-container">
+                    <form class="search-form"> 
+                        <div class="airport-input">
+                            <div>
+                                <div class="airport-code">IAD</div>
+                                <div class="airport-city">Washington D. C.</div>
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="swap-button">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                        
+                        <div class="airport-input">
+                            <div>
+                                <div class="airport-code">To</div>
+                                <div class="airport-city">Your Destination</div>
+                            </div>
+                        </div>
+                        
+                        <div class="trip-type" style="display:inline-block; cursor:pointer;">
+                            Round Trip <i class="fas fa-chevron-down"></i>
+                        </div>
+
+                        <!-- Opciones desplegables para tipo de viaje -->
+                        <div class="trip-options" style="display:none; position:absolute; background:#fff; border:1px solid #ddd; padding:6px; border-radius:6px; z-index:9999; box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+                            <div class="trip-option" data-value="Round Trip" style="padding:6px 10px; cursor:pointer;">Round Trip</div>
+                            <div class="trip-option" data-value="One Way" style="padding:6px 10px; cursor:pointer;">One Way</div>
+                            <div class="trip-option" data-value="Multi-City" style="padding:6px 10px; cursor:pointer;">Multi-City</div>
+                        </div>
+                        
+                        <div class="date-passenger" style="display:inline-block; margin-left:12px;">
+                            <span class="date-label">Depart — Return <i class="fas fa-calendar"></i></span>
+
+                            <!-- Visual mejorada de Passenger (sin fondo y sin color en el icono) -->
+                            <span class="passenger-display" style="display:inline-flex; align-items:center; gap:8px; margin-left:12px; cursor:pointer;">
+                                <span class="passenger-pill">
+                                    <i class="fas fa-user"></i>
+                                    <span class="passenger-label-text">1 Passenger</span>
+                                </span>
+                                <i class="fas fa-chevron-down small-arrow"></i>
+                            </span>
+                        </div>
+
+                        <!-- Selector de pasajeros (estilizado) -->
+                        <div class="passenger-picker" style="display:none; position:absolute; z-index:9999;">
+                            <div class="pp-card">
+                                <div class="pp-header">
+                                    <div class="pp-title">Passengers</div>
+                                    <div class="pp-sub">Who is traveling?</div>
+                                </div>
+
+                                <div class="pp-body">
+                                    <!-- Adults row -->
+                                    <div class="pp-row">
+                                        <div class="pp-row-left">
+                                            <div class="pp-row-title">Adults</div>
+                                            <div class="pp-row-sub">16+ years</div>
+                                        </div>
+                                        <div class="pp-row-controls">
+                                            <button type="button" class="pp-btn pass-adult-decrease" aria-label="Decrease adults">−</button>
+                                            <div class="pp-count pass-count-adults">1</div>
+                                            <button type="button" class="pp-btn pass-adult-increase" aria-label="Increase adults">+</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Children row (nueva) -->
+                                    <div class="pp-row">
+                                        <div class="pp-row-left">
+                                            <div class="pp-row-title">Children</div>
+                                            <div class="pp-row-sub">2-11 years</div>
+                                        </div>
+                                        <div class="pp-row-controls">
+                                            <button type="button" class="pp-btn pass-child-decrease" aria-label="Decrease children">−</button>
+                                            <div class="pp-count pass-count-children">0</div>
+                                            <button type="button" class="pp-btn pass-child-increase" aria-label="Increase children">+</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- (Opcional) Bebés u otras filas si quieres -->
+                                </div>
+
+                                <div class="pp-footer">
+                                    <button type="button" class="pp-clear">Clear</button>
+                                    <button type="button" class="pp-done passenger-done">Done</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dentro del body del segundo HTML, después del main-content -->
+                        <div id="flightBookingOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000;"></div>
+
+                        <div id="flightBookingModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1001;">
+                            <!-- Copia del primer HTML (flight booking interface) -->
+                            <div class="qx9z3_flight_booking_container">
+                                <header class="h7k2p_header_nav">
+                                    <button class="m4n8q_close_button" onclick="closeFlightBooking()">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </header>
+
+                                <nav class="r6t1w_tab_navigation">
+                                    <div class="y8u5e_tab_item active">Book</div>
+                                    <div class="y8u5e_tab_item">Check-in</div>
+                                    <div class="y8u5e_tab_item">My Trips</div>
+                                </nav>
+
+                                <main class="z3x7v_main_content">
+                                    <section class="p1l9k_destination_section">
+                                        <div class="f5d2n_destination_group">
+                                            <h2>From</h2>
+                                            <div class="c8v4b_destination_label">Your Origin</div>
+                                        </div>
+                                        
+                                        <button class="j6n1m_swap_button">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </button>
+                                        
+                                        <div class="f5d2n_destination_group">
+                                            <h2>To</h2>
+                                            <div class="c8v4b_destination_label">Your Destination</div>
+                                        </div>
+                                    </section>
+
+                                    <section class="a9s7g_trip_type_section">
+                                        <div class="w2q4t_trip_type_selector">
+                                            <span class="d3h8k_trip_type_text">Round Trip</span>
+                                            <i class="fas fa-chevron-down l5b9x_dropdown_arrow"></i>
+                                        </div>
+                                    </section>
+
+                                    <section class="n8m6r_dates_section">
+                                        <div class="q7f3s_date_wrapper">
+                                            <input type="text" class="q7f3s_date_input" placeholder="Depart" readonly>
+                                        </div>
+                                        <div class="q7f3s_date_wrapper q7f3s_return_wrapper">
+                                            <input type="text" class="q7f3s_date_input" placeholder="Return" readonly>
+                                        </div>
+                                    </section>
+
+                                    <section class="t4y2u_passengers_section">
+                                        <div class="i9o6e_passenger_selector">
+                                            <span class="v8c1x_passenger_text">1 Passenger</span>
+                                            <i class="fas fa-chevron-down l5b9x_dropdown_arrow"></i>
+                                        </div>
+                                    </section>
+
+                                    <section class="b5n7z_options_section">
+                                        <div class="k3p2m_checkbox_item">
+                                            <div class="h1w9q_checkbox"></div>
+                                            <span class="s6g4f_checkbox_label">Shop with Miles</span>
+                                            <i class="fas fa-question-circle e2r8t_info_icon"></i>
+                                        </div>
+                                        
+                                        <div class="k3p2m_checkbox_item">
+                                            <div class="h1w9q_checkbox"></div>
+                                            <span class="s6g4f_checkbox_label">Refundable Fares Only</span>
+                                            <i class="fas fa-question-circle e2r8t_info_icon"></i>
+                                        </div>
+                                        
+                                        <div class="k3p2m_checkbox_item">
+                                            <div class="h1w9q_checkbox"></div>
+                                            <span class="s6g4f_checkbox_label">My dates are flexible</span>
+                                        </div>
+                                    </section>
+                                </main>
+
+                                <footer class="g9u3y_bottom_section">
+                                    <div class="x7k5n_advanced_search">
+                                        <span class="o4j8l_advanced_text">Advanced Search</span>
+                                        <i class="fas fa-chevron-down m2q6w_advanced_arrow"></i>
+                                    </div>
+                                    
+                                    <button class="u1n7v_search_button">
+                                        Search
+                                    </button>
+                                </footer>
+                            </div>
+                        </div>
+
+                        <!-- Calendar Structure -->
+                        <div class="calendar-overlay-xz9k" id="calendarOverlay-xz9k"></div>
+
+                        <div class="calendar-container-xz9k" id="calendarContainer-xz9k">
+                            <div class="calendar-header-xz9k">
+                                <div class="calendar-nav-xz9k">
+                                    <button class="nav-arrow-xz9k" id="prevMonth-xz9k">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button class="nav-arrow-xz9k" id="nextMonth-xz9k">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                                <div class="calendar-actions-xz9k">
+                                    <button class="clear-btn-xz9k" id="clearBtn-xz9k">Clear</button>
+                                    <button class="done-btn-xz9k" id="doneBtn-xz9k">DONE</button>
+                                </div>
+                            </div>
+                            
+                            <div class="calendar-months-xz9k">
+                                <div class="month-container-xz9k">
+                                    <div class="month-title-xz9k" id="leftMonthTitle-xz9k">July 2025</div>
+                                    <div class="calendar-grid-xz9k" id="leftCalendar-xz9k">
+                                        <div class="weekday-header-xz9k">S</div>
+                                        <div class="weekday-header-xz9k">M</div>
+                                        <div class="weekday-header-xz9k">T</div>
+                                        <div class="weekday-header-xz9k">W</div>
+                                        <div class="weekday-header-xz9k">T</div>
+                                        <div class="weekday-header-xz9k">F</div>
+                                        <div class="weekday-header-xz9k">S</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="month-container-xz9k">
+                                    <div class="month-title-xz9k" id="rightMonthTitle-xz9k">August 2025</div>
+                                    <div class="calendar-grid-xz9k" id="rightCalendar-xz9k">
+                                        <div class="weekday-header-xz9k">S</div>
+                                        <div class="weekday-header-xz9k">M</div>
+                                        <div class="weekday-header-xz9k">T</div>
+                                        <div class="weekday-header-xz9k">W</div>
+                                        <div class="weekday-header-xz9k">T</div>
+                                        <div class="weekday-header-xz9k">F</div>
+                                        <div class="weekday-header-xz9k">S</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="search-button">SEARCH</button>
+                    </form>
+
+ <!-- Overlay de fondo -->
+                    <div id="backgroundOverlay_xyz" class="background-overlay-xyz" style="display: none;"></div>
+
+                    <!-- Modal de búsqueda de aeropuertos -->
+                    <div id="flightSearchModal_xyz" class="modal-dropdown-flight-search" style="display: none;">
+                        <div class="modal-container-flight-search">
+                            <div class="modal-header-flight-search">
+                                <h2 class="modal-title-flight-search">SEARCH</h2>
+                                <button class="close-btn-flight-search" onclick="closeFlightSearchModal()">×</button>
+                            </div>
+                            
+                            <div class="modal-body-flight-search">
+                                <div class="origin-section-flight-search">
+                                    <label class="input-label-flight-search">Origin</label>
+                                    <div class="search-input-container-flight-search">
+                                        <input type="text" id="originInput_xyz" class="airport-search-input-xyz" placeholder="Enter city or airport code" autocomplete="off">
+                                        <button class="clear-input-btn-xyz" onclick="clearOriginInput()" style="display: none;">×</button>
+                                    </div>
+                                    <div id="originSuggestions_xyz" class="suggestions-container-xyz"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="search-options">
+                        <label>
+                            <input type="checkbox"> Shop with Miles <i class="fas fa-question-circle"></i>
+                        </label>
+                        <label>
+                            <input type="checkbox"> Refundable Fares Only <i class="fas fa-question-circle"></i>
+                        </label>
+                        <label>
+                            <input type="checkbox"> My dates are flexible
+                        </label>
+                        <a href="#" class="advanced-search">Advanced Search <i class="fas fa-chevron-down"></i></a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="promo-section" style="padding-bottom: 2%;">
+                <div class="promo-container">
+                    <div class="promo-content" >
+                        <div class="promo-logo">
+                            <img src="img/DL-LA-partner.webp" style="width: 50%;" alt="">
+                        </div>
+                        
+                        <h1 class="promo-title" style="margin-top: 0;">SOUTH + NORTH</h1>
+                        
+                        <p class="promo-description">
+                            Are meant to be together. Delta and LATAM Airlines offer you more than 300 destinations to explore.
+                        </p>
+                        
+                        <a href="#" class="learn-more">LEARN MORE</a>
+                    </div>
+                    
+                    <div class="plane-image">
+                        <!-- La imagen se muestra con el pseudo-elemento ::after -->
+                    </div>
+                </div>
+            </section>
+        </main>
+       
+    </div>
+
+    <!-- Sección adicional del escritorio -->
+    <div class="xk9p2_main_container">
+        <header class="zt4m7_top_navigation">
+            <nav class="bf8n1_nav_wrapper">
+                <div class="qw5r3_nav_left">
+                    <a href="#" class="lm2k9_nav_item">
+                        <i class="fas fa-umbrella-beach vh7x4_nav_icon"></i>
+                        <span>VACATIONS</span>
+                    </a>
+                    <a href="#" class="lm2k9_nav_item">
+                        <i class="fas fa-car vh7x4_nav_icon"></i>
+                        <span>CARS<br>& STAYS</span>
+                        
+                    </a>
+                    <a href="#" class="lm2k9_nav_item">
+                        <i class="fas fa-ship vh7x4_nav_icon"></i>
+                        <span>CRUISES</span>
+                       
+                    </a>
+                    <a href="#" class="lm2k9_nav_item">
+                        <i class="fas fa-gift vh7x4_nav_icon"></i>
+                        <span>GIFT CARDS</span>
+                      
+                    </a>
+                </div>
+                <div class="np8z5_nav_right">
+                    Updated Bag & Travel Fees
+                </div>
+            </nav>
+        </header>
+
+        <main class="dx3w1_hero_section">
+            <div class="ry9m4_hero_container">
+                <div class="ab5n2_hero_subtitle">THE DELTA CUSTOMER EXPERIENCE</div>
+                <h1 class="kj8t6_hero_title">Supporting You Through Your Travel Journey</h1>
+                
+                <div class="pw1z7_content_section">
+                    <div class="gf4s8_icon_container">
+                        <div class="hl9p3_flight_icon">
+                            <img src="img/wf-2941350-01-960x720.jpg" style="width: 200%;" alt="">
+                        </div>
+                    </div>
+                    
+                    <div class="mq6r1_text_content">
+                        <div class="ip4j9_content_wrapper">
+                            <h2 class="cv2x5_section_title">HOW CAN I CANCEL/CHANGE MY FLIGHT?</h2>
+                            <div class="wr7k4_red_underline"></div>
+                            <p class="tn9v8_description">
+                                We understand that your plans may change. It's simple to cancel or change your flight prior to departure on delta.com in just a few easy steps. <a href="#" class="bx3h2_learn_more">Learn more.</a>
+                            </p>
+                            <button class="uz5y1_arrow_button">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+    </div>
+    
+    <div class="container">
+        <div class="card">
+            <img src="img/mc-international-serving-food-1042.jpg" alt="Onboard Experience" class="card-image">
+            <div class="card-content">
+                <button class="arrow-button">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <h3 class="card-title">OUR ONBOARD EXPERIENCE</h3>
+                <p class="card-description">You deserve to arrive refreshed so stretch out in one of our luxurious cabins, relax with your favorite food and beverage and enjoy a wide variety of free entertainment.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img/wf-2525035-01-1060x600.jpg" alt="Multi-Factor Authentication" class="card-image">
+            <div class="card-content">
+                <button class="arrow-button">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <h3 class="card-title">ENROLL IN MULTI-FACTOR AUTHENTICATION</h3>
+                <p class="card-description">We've introduced multi-factor authentication to secure your account and streamline account recovery.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img/wf-2329601-1060x600.webp" alt="Maximum Flexibility" class="card-image">
+            <div class="card-content">
+                <button class="arrow-button">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <h3 class="card-title">MAXIMUM FLEXIBILITY, MORE REWARDS</h3>
+                <p class="card-description">Enjoy Extra, the Delta experience with the highest level of flexibility, including refund options, more miles and enhanced travel benefits.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="xyz-delta-container">
+        <!-- Primera sección - Mapa -->
+        <div class="xyz-travel-section">
+            <div class="xyz-travel-content">
+                <div class="xyz-map-container">
+                    <img src="img/delta-discover-map3.jpg" style="width: 100%;" alt="">
+                </div>
+                <div class="xyz-text-content">
+                    <h2 class="xyz-section-title">EXPLORE DESTINATIONS & TRAVEL REQUIREMENTS</h2>
+                    <div class="xyz-red-line"></div>
+                    <p class="xyz-description">Use our interactive Delta Discover Map to find out what's open for travel and get details on any potential entry requirements.</p>
+                    <button class="xyz-arrow-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Segunda sección - App móvil -->
+        <div class="xyz-app-section">
+            <div class="xyz-app-content">
+                <div class="xyz-phone-container">
+                    <img src="img/fda-homepage-700x425.jpg" style="width: 100%;" alt="">
+                </div>
+                <div class="xyz-app-text-content">
+                    <h2 class="xyz-app-section-title">EVERYTHING YOU NEED, ALL IN ONE PLACE</h2>
+                    <div class="xyz-red-line"></div>
+                    <p class="xyz-app-description">Download the Fly Delta app to check in, track your flight status, make changes to your trip, chat with a live agent and more.</p>
+                    <button class="xyz-arrow-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/interactivemobile.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/airport.js"></script>
+    <script src="js/datform.js"></script>
+    <script src="js/redi.js"></script>
+
+    
+
+
+</body>
+</html>
