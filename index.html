@@ -1,282 +1,569 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Budget Flights & Top Destinations</title>
-  <meta name="description" content="Discover cheap flights and top tourist sites. Contact us only through the inquiry form on this page.">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17532027759"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17532027759');
-</script>
-  <style>
-    :root{
-      --bg:#fafafa;
-      --card:#ffffff;
-      --muted:#65737e;
-      --accent:#0066cc;
-      --accent-2:#00a3b4;
-      --radius:14px;
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background:linear-gradient(180deg,var(--bg),#f0f6ff 60%);
-      color:#102a43;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-      padding:32px;
-    }
-    .container{max-width:1100px;margin:0 auto}
-    header{
-      display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px
-    }
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{
-      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px;box-shadow:0 6px 18px rgba(0,96,192,0.12)
-    }
-    h1{font-size:28px;margin:0}
-    p.lead{margin:6px 0 0;color:var(--muted)}
-
-    .grid{display:grid;grid-template-columns:1fr 380px;gap:28px}
-    @media (max-width:900px){.grid{grid-template-columns:1fr} .container{padding:0 12px}}
-
-    .card{background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:0 6px 18px rgba(16,42,67,0.06)}
-
-    .hero{display:flex;flex-direction:column;gap:12px;padding:28px}
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
-    .search-simulation{display:flex;gap:8px;align-items:center}
-    .search-simulation input{padding:10px 12px;border-radius:10px;border:1px solid #e6eef8;width:220px}
-    .btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
-    .btn.secondary{background:transparent;color:var(--accent);border:2px solid rgba(0,102,204,0.12)}
-
-    .features{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
-    .feature{flex:1;min-width:140px;padding:12px;border-radius:10px;background:linear-gradient(180deg,#ffffff,#f8fbff);border:1px solid rgba(2,24,56,0.03)}
-
-    .destinations{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
-    @media (max-width:900px){.destinations{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:560px){.destinations{grid-template-columns:1fr}}
-    .dest{padding:12px;border-radius:12px;background:linear-gradient(180deg,#ffffff,#fbfdff);border:1px solid rgba(2,24,56,0.03)}
-    .dest h3{margin:6px 0 6px;font-size:16px}
-    .dest p{margin:0;color:var(--muted);font-size:14px}
-
-    .tips{margin-top:18px}
-    .tips li{margin-bottom:8px}
-
-    /* Right column / form */
-    aside form{display:flex;flex-direction:column;gap:12px}
-    label{font-size:13px;color:#123;color:var(--muted)}
-    input[type="text"],input[type="email"],select,textarea{padding:10px 12px;border-radius:10px;border:1px solid #e6eef8;width:100%;font-size:14px}
-    textarea{min-height:120px;resize:vertical}
-    .note{font-size:13px;color:var(--muted)}
-
-    footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px}
-
-    /* submission overlay */
-    .overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(4,12,24,0.4);opacity:0;pointer-events:none;transition:opacity .18s}
-    .overlay.show{opacity:1;pointer-events:auto}
-    .overlay .modal{background:white;padding:22px;border-radius:12px;max-width:520px;width:90%;text-align:center}
-    .close-x{margin-top:12px;display:inline-block}
-
-    /* tiny accessibility helpers */
-    .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Airlines - Reservar Vuelos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Arial:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="font/AABA9C13AF9C5C638.woff2">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo" aria-hidden="true">BF</div>
-        <div>
-          <h1>Budget Flights & Destinations</h1>
-          <p class="lead">Smart tips, local highlights, and practical ways to book cheaper flights. Contact us only via the form on this page.</p>
-        </div>
-      </div>
-      <div aria-hidden="true">✈️</div>
-    </header>
-
-    <main class="grid" role="main">
-      <section>
-        <article class="card hero" aria-labelledby="hero-title">
-          <div>
-            <h2 id="hero-title">Find Cheap Flights. Explore Amazing Places.</h2>
-            <p class="lead">We highlight budget-friendly fares and must-see tourist spots — from iconic landmarks to hidden gems. Save money on flights and spend it on experiences.</p>
-          </div>
-
-          <div class="cta-row" aria-hidden="false">
-            <div class="search-simulation" role="search" aria-label="Simulated flight search">
-              <input type="text" placeholder="From: City or airport">
-              <input type="text" placeholder="To: Destination">
-              <input type="text" placeholder="Dates (flexible)">
-              <button class="btn" onclick="simulateSearch()" type="button">Search</button>
+    <!-- Vista Móvil -->
+    <div class="mobile-view">
+        <!-- Header -->
+        <header class="header">
+            <button class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="auth-buttons">
+                <button class="sign-up-btn">SIGN UP</button>
+                <button class="log-in-btn">LOG IN</button>
+                <div class="notification">
+                    <i class="fas fa-bell"></i>
+                </div>
             </div>
-            <button class="btn secondary" onclick="scrollToForm()">Contact via form</button>
-          </div>
+        </header>
 
-          <div class="features" aria-hidden="false">
-            <div class="feature">
-              <strong>Cheap Fare Tips</strong>
-              <p>Learn when to book, how to compare fares, and how to use flexible dates to save.</p>
-            </div>
-            <div class="feature">
-              <strong>Top Destinations</strong>
-              <p>Curated tourist sites and local highlights for budget travelers.</p>
-            </div>
-            <div class="feature">
-              <strong>Practical Booking</strong>
-              <p>Advice on baggage, layovers, and how to avoid surprise fees.</p>
-            </div>
-          </div>
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <button class="nav-tab active">BOOK</button>
+            <button class="nav-tab">CHECK-IN</button>
+            <button class="nav-tab">MY TRIPS</button>
+        </nav>
 
-          <h3 style="margin-top:18px">Featured Tourist Sites</h3>
-          <div class="destinations" aria-live="polite">
-            <article class="dest" tabindex="0">
-              <h3>Old Town Waterfront</h3>
-              <p>Historic streets, vibrant markets, and budget-friendly local food near the harbor.</p>
-            </article>
-            <article class="dest" tabindex="0">
-              <h3>Sunset Cliff Lookout</h3>
-              <p>Panoramic views that don't cost a thing — perfect for evening strolls and photography.</p>
-            </article>
-            <article class="dest" tabindex="0">
-              <h3>Riverside Park Trails</h3>
-              <p>Free walking paths, picnic spots, and family-friendly activities close to the city center.</p>
-            </article>
-            <article class="dest" tabindex="0">
-              <h3>Artisan Quarter</h3>
-              <p>Local crafts, street art, and small galleries where you can support local makers.</p>
-            </article>
-            <article class="dest" tabindex="0">
-              <h3>Mountain Viewpoint</h3>
-              <p>A short hike rewards you with sweeping views — an inexpensive way to connect with nature.</p>
-            </article>
-            <article class="dest" tabindex="0">
-              <h3>Historic Railway Station</h3>
-              <p>Architectural beauty and low-cost tours explaining the region's history.</p>
-            </article>
-          </div>
+                    <!-- Booking Section --> 
+            <section class="booking-section" style="margin-bottom: 0; padding-bottom: 0;">
+                <div class="route-selector">
+                    <div class="origin">
+                        <div class="airport-code">IAD</div>
+                        <div class="city-name">Washington D. C.</div>
+                    </div>
+                    <div class="route-arrow">⟷</div>
+                    <div class="destination">
+                        <div class="airport-code destination-placeholder">To</div>
+                        <div class="city-name destination-placeholder">Your Destination</div>
+                    </div>
+                </div>
+                <button class="swap-btn">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </section>
 
-          <div class="tips card" style="margin-top:18px">
-            <h4>How to Book Cheap Flights</h4>
-            <ul>
-              <li>Be flexible with dates — midweek departures are often cheaper.</li>
-              <li>Compare multiple search engines and check nearby airports.</li>
-              <li>Book connecting flights separately only if the schedule is reliable.</li>
-              <li>Sign up for price alerts (use a private tool) and watch for flash sales.</li>
-              <li>Travel light to avoid baggage fees — many cheap fares exclude checked bags.</li>
-            </ul>
-          </div>
-        </article>
+            <script>
+            document.querySelector('.booking-section').addEventListener('click', function () {
+                window.location.href = 'copy.html'; // Cambia por tu URL
+            });
+            </script>
 
-        <section class="card" style="margin-top:18px">
-          <h3>Responsible Travel & Budgeting</h3>
-          <p class="lead">Cheap flights let you visit more places, but travel responsibly: respect local rules, choose sustainable options where possible, and plan a budget that supports local communities.</p>
-        </section>
 
-      </section>
+        <!-- Main Content -->
+        <main class="main-content" style="background-image: url(img/imgi_17_wf-1476415-v1-1600-624.jpg);">
+            <img src="img/DL-LA-partner.webp" style="width: 50%; margin-bottom: 0; margin-top: 15%;" alt="Delta and LATAM Airlines airplane" class="airplane-image">
 
-      <aside>
-        <div class="card" id="contact-card">
-          <h3>Contact / Inquiry Form</h3>
-          <p class="note">We do not publish direct contact details or social media. Reach out using this form only.</p>
-          <form id="inquiryForm" onsubmit="return handleSubmit(event)" novalidate>
-            <label for="fullname">Full name</label>
-            <input id="fullname" name="fullname" type="text" required placeholder="Your name">
+            <h1 class="tagline" style="margin-bottom: 0; margin-top: 2%;">SOUTH + NORTH</h1>
+            
+            <p class="description">
+                Are meant to be together. Delta and LATAM Airlines offer you more than 300 destinations to explore.
+            </p>
 
-            <label for="email">Email address</label>
-            <input id="email" name="email" type="email" required placeholder="you@example.com">
+            <button class="learn-more-btn">LEARN MORE</button>
+        </main>
 
-            <label for="destination">Destination of interest</label>
-            <input id="destination" name="destination" type="text" placeholder="City or region">
-
-            <label for="budget">Estimated budget for flights (optional)</label>
-            <select id="budget" name="budget">
-              <option value="">Select a range</option>
-              <option>$100 - $300</option>
-              <option>$300 - $600</option>
-              <option>$600 - $1000</option>
-              <option>Prefer not to say</option>
-            </select>
-
-            <label for="message">Message (what are you looking for?)</label>
-            <textarea id="message" name="message" placeholder="Tell us which flights, dates, or tips you need..."></textarea>
-
-            <div style="display:flex;gap:10px;align-items:center;">
-              <button class="btn" type="submit">Send inquiry</button>
-              <button class="btn secondary" type="button" onclick="resetForm()">Clear</button>
-            </div>
-
-            <p class="note" style="margin-top:8px">Privacy: this demo page does not store personal data. In production, form submissions would be handled securely on the server.</p>
-          </form>
-        </div>
-      </aside>
-    </main>
-
-    <footer>
-      <p>No phone numbers, no public email addresses, and no social media links are shown — contact only through the form above.</p>
-      <p>&copy; <span id="year"></span> Budget Flights & Destinations</p>
-    </footer>
-  </div>
-
-  <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="thanks-title">
-    <div class="modal card">
-      <h3 id="thanks-title">Thank you — inquiry recorded</h3>
-      <p id="thanks-msg">We received your message. This demo HTML simulates a successful submission and does not transmit data to an external server.</p>
-      <button class="btn close-x" onclick="closeOverlay()">Close</button>
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="bottom-nav-item">
+                <i class="fas fa-umbrella-beach"></i>
+                <span>VACATIONS</span>
+            </button>
+            <button class="bottom-nav-item">
+                <i class="fas fa-car"></i>
+                <span>CARS<br>& STAYS</span>
+                <i class="fas fa-external-link-alt arrow"></i>
+            </button>
+            <button class="bottom-nav-item">
+                <i class="fas fa-ship"></i>
+                <span>CRUISES</span>
+                <i class="fas fa-external-link-alt arrow"></i>
+            </button>
+            <button class="bottom-nav-item">
+                <i class="fas fa-gift"></i>
+                <span>GIFT CARDS</span>
+                <i class="fas fa-external-link-alt arrow"></i>
+            </button>
+        </nav>
     </div>
-  </div>
+    
+    <!-- Vista Escritorio -->
+    <div class="desktop-view">
+        <header class="header">
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <img src="img/Delta Air Lines.svg" alt="">
+                    <img src="img/Skyteam.svg" style="margin-left: 4%;" alt="">
+                </a>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#" class="active">BOOK</a></li>
+                        <li><a href="#">CHECK-IN</a></li>
+                        <li><a href="#">MY TRIPS</a></li>
+                        <li><a href="#">FLIGHT STATUS</a></li>
+                        <li><a href="#">Travel Info</a></li>
+                        <li><a href="#">SkyMiles</a></li>
+                        <li><a href="#">Need Help?</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="nav-actions">
+                    <a href="#" class="sign-up">SIGN UP</a>
+                    <a href="#" class="log-in">LOG IN</a>
+                    <i class="fas fa-bell notification"></i>
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+            </div>
+        </header>
+        <!-- escritorio -->
+        <main class="main-content">
+            <section class="search-section">
+                <div class="search-container">
+                    <form class="search-form"> 
+                        <div class="airport-input">
+                            <div>
+                                <div class="airport-code">IAD</div>
+                                <div class="airport-city">Washington D. C.</div>
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="swap-button">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                        
+                        <div class="airport-input">
+                            <div>
+                                <div class="airport-code">To</div>
+                                <div class="airport-city">Your Destination</div>
+                            </div>
+                        </div>
+                        
+                        <div class="trip-type" style="display:inline-block; cursor:pointer;">
+                            Round Trip <i class="fas fa-chevron-down"></i>
+                        </div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+                        <!-- Opciones desplegables para tipo de viaje -->
+                        <div class="trip-options" style="display:none; position:absolute; background:#fff; border:1px solid #ddd; padding:6px; border-radius:6px; z-index:9999; box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+                            <div class="trip-option" data-value="Round Trip" style="padding:6px 10px; cursor:pointer;">Round Trip</div>
+                            <div class="trip-option" data-value="One Way" style="padding:6px 10px; cursor:pointer;">One Way</div>
+                            <div class="trip-option" data-value="Multi-City" style="padding:6px 10px; cursor:pointer;">Multi-City</div>
+                        </div>
+                        
+                        <div class="date-passenger" style="display:inline-block; margin-left:12px;">
+                            <span class="date-label">Depart — Return <i class="fas fa-calendar"></i></span>
 
-    function simulateSearch(){
-      alert('This is a demo search to preview how to find cheap flights. Use the contact form to request personalized help.');
-    }
+                            <!-- Visual mejorada de Passenger (sin fondo y sin color en el icono) -->
+                            <span class="passenger-display" style="display:inline-flex; align-items:center; gap:8px; margin-left:12px; cursor:pointer;">
+                                <span class="passenger-pill">
+                                    <i class="fas fa-user"></i>
+                                    <span class="passenger-label-text">1 Passenger</span>
+                                </span>
+                                <i class="fas fa-chevron-down small-arrow"></i>
+                            </span>
+                        </div>
 
-    function scrollToForm(){
-      document.getElementById('contact-card').scrollIntoView({behavior:'smooth',block:'center'});
-    }
+                        <!-- Selector de pasajeros (estilizado) -->
+                        <div class="passenger-picker" style="display:none; position:absolute; z-index:9999;">
+                            <div class="pp-card">
+                                <div class="pp-header">
+                                    <div class="pp-title">Passengers</div>
+                                    <div class="pp-sub">Who is traveling?</div>
+                                </div>
 
-    function validateEmail(email){
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
+                                <div class="pp-body">
+                                    <!-- Adults row -->
+                                    <div class="pp-row">
+                                        <div class="pp-row-left">
+                                            <div class="pp-row-title">Adults</div>
+                                            <div class="pp-row-sub">16+ years</div>
+                                        </div>
+                                        <div class="pp-row-controls">
+                                            <button type="button" class="pp-btn pass-adult-decrease" aria-label="Decrease adults">−</button>
+                                            <div class="pp-count pass-count-adults">1</div>
+                                            <button type="button" class="pp-btn pass-adult-increase" aria-label="Increase adults">+</button>
+                                        </div>
+                                    </div>
 
-    function handleSubmit(e){
-      e.preventDefault();
-      var name = document.getElementById('fullname').value.trim();
-      var email = document.getElementById('email').value.trim();
-      if(!name){
-        alert('Please enter your name.');
-        return false;
-      }
-      if(!validateEmail(email)){
-        alert('Please enter a valid email address.');
-        return false;
-      }
-      // Show overlay to simulate successful submission.
-      document.getElementById('overlay').classList.add('show');
-      return false;
-    }
+                                    <!-- Children row (nueva) -->
+                                    <div class="pp-row">
+                                        <div class="pp-row-left">
+                                            <div class="pp-row-title">Children</div>
+                                            <div class="pp-row-sub">2-11 years</div>
+                                        </div>
+                                        <div class="pp-row-controls">
+                                            <button type="button" class="pp-btn pass-child-decrease" aria-label="Decrease children">−</button>
+                                            <div class="pp-count pass-count-children">0</div>
+                                            <button type="button" class="pp-btn pass-child-increase" aria-label="Increase children">+</button>
+                                        </div>
+                                    </div>
 
-    function closeOverlay(){
-      document.getElementById('overlay').classList.remove('show');
-      // Optionally clear the form after "submission"
-      document.getElementById('inquiryForm').reset();
-    }
+                                    <!-- (Opcional) Bebés u otras filas si quieres -->
+                                </div>
 
-    function resetForm(){
-      if(confirm('Clear the form?')){
-        document.getElementById('inquiryForm').reset();
-      }
-    }
-  </script>
+                                <div class="pp-footer">
+                                    <button type="button" class="pp-clear">Clear</button>
+                                    <button type="button" class="pp-done passenger-done">Done</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dentro del body del segundo HTML, después del main-content -->
+                        <div id="flightBookingOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000;"></div>
+
+                        <div id="flightBookingModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1001;">
+                            <!-- Copia del primer HTML (flight booking interface) -->
+                            <div class="qx9z3_flight_booking_container">
+                                <header class="h7k2p_header_nav">
+                                    <button class="m4n8q_close_button" onclick="closeFlightBooking()">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </header>
+
+                                <nav class="r6t1w_tab_navigation">
+                                    <div class="y8u5e_tab_item active">Book</div>
+                                    <div class="y8u5e_tab_item">Check-in</div>
+                                    <div class="y8u5e_tab_item">My Trips</div>
+                                </nav>
+
+                                <main class="z3x7v_main_content">
+                                    <section class="p1l9k_destination_section">
+                                        <div class="f5d2n_destination_group">
+                                            <h2>From</h2>
+                                            <div class="c8v4b_destination_label">Your Origin</div>
+                                        </div>
+                                        
+                                        <button class="j6n1m_swap_button">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </button>
+                                        
+                                        <div class="f5d2n_destination_group">
+                                            <h2>To</h2>
+                                            <div class="c8v4b_destination_label">Your Destination</div>
+                                        </div>
+                                    </section>
+
+                                    <section class="a9s7g_trip_type_section">
+                                        <div class="w2q4t_trip_type_selector">
+                                            <span class="d3h8k_trip_type_text">Round Trip</span>
+                                            <i class="fas fa-chevron-down l5b9x_dropdown_arrow"></i>
+                                        </div>
+                                    </section>
+
+                                    <section class="n8m6r_dates_section">
+                                        <div class="q7f3s_date_wrapper">
+                                            <input type="text" class="q7f3s_date_input" placeholder="Depart" readonly>
+                                        </div>
+                                        <div class="q7f3s_date_wrapper q7f3s_return_wrapper">
+                                            <input type="text" class="q7f3s_date_input" placeholder="Return" readonly>
+                                        </div>
+                                    </section>
+
+                                    <section class="t4y2u_passengers_section">
+                                        <div class="i9o6e_passenger_selector">
+                                            <span class="v8c1x_passenger_text">1 Passenger</span>
+                                            <i class="fas fa-chevron-down l5b9x_dropdown_arrow"></i>
+                                        </div>
+                                    </section>
+
+                                    <section class="b5n7z_options_section">
+                                        <div class="k3p2m_checkbox_item">
+                                            <div class="h1w9q_checkbox"></div>
+                                            <span class="s6g4f_checkbox_label">Shop with Miles</span>
+                                            <i class="fas fa-question-circle e2r8t_info_icon"></i>
+                                        </div>
+                                        
+                                        <div class="k3p2m_checkbox_item">
+                                            <div class="h1w9q_checkbox"></div>
+                                            <span class="s6g4f_checkbox_label">Refundable Fares Only</span>
+                                            <i class="fas fa-question-circle e2r8t_info_icon"></i>
+                                        </div>
+                                        
+                                        <div class="k3p2m_checkbox_item">
+                                            <div class="h1w9q_checkbox"></div>
+                                            <span class="s6g4f_checkbox_label">My dates are flexible</span>
+                                        </div>
+                                    </section>
+                                </main>
+
+                                <footer class="g9u3y_bottom_section">
+                                    <div class="x7k5n_advanced_search">
+                                        <span class="o4j8l_advanced_text">Advanced Search</span>
+                                        <i class="fas fa-chevron-down m2q6w_advanced_arrow"></i>
+                                    </div>
+                                    
+                                    <button class="u1n7v_search_button">
+                                        Search
+                                    </button>
+                                </footer>
+                            </div>
+                        </div>
+
+                        <!-- Calendar Structure -->
+                        <div class="calendar-overlay-xz9k" id="calendarOverlay-xz9k"></div>
+
+                        <div class="calendar-container-xz9k" id="calendarContainer-xz9k">
+                            <div class="calendar-header-xz9k">
+                                <div class="calendar-nav-xz9k">
+                                    <button class="nav-arrow-xz9k" id="prevMonth-xz9k">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button class="nav-arrow-xz9k" id="nextMonth-xz9k">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                                <div class="calendar-actions-xz9k">
+                                    <button class="clear-btn-xz9k" id="clearBtn-xz9k">Clear</button>
+                                    <button class="done-btn-xz9k" id="doneBtn-xz9k">DONE</button>
+                                </div>
+                            </div>
+                            
+                            <div class="calendar-months-xz9k">
+                                <div class="month-container-xz9k">
+                                    <div class="month-title-xz9k" id="leftMonthTitle-xz9k">July 2025</div>
+                                    <div class="calendar-grid-xz9k" id="leftCalendar-xz9k">
+                                        <div class="weekday-header-xz9k">S</div>
+                                        <div class="weekday-header-xz9k">M</div>
+                                        <div class="weekday-header-xz9k">T</div>
+                                        <div class="weekday-header-xz9k">W</div>
+                                        <div class="weekday-header-xz9k">T</div>
+                                        <div class="weekday-header-xz9k">F</div>
+                                        <div class="weekday-header-xz9k">S</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="month-container-xz9k">
+                                    <div class="month-title-xz9k" id="rightMonthTitle-xz9k">August 2025</div>
+                                    <div class="calendar-grid-xz9k" id="rightCalendar-xz9k">
+                                        <div class="weekday-header-xz9k">S</div>
+                                        <div class="weekday-header-xz9k">M</div>
+                                        <div class="weekday-header-xz9k">T</div>
+                                        <div class="weekday-header-xz9k">W</div>
+                                        <div class="weekday-header-xz9k">T</div>
+                                        <div class="weekday-header-xz9k">F</div>
+                                        <div class="weekday-header-xz9k">S</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="search-button">SEARCH</button>
+                    </form>
+
+ <!-- Overlay de fondo -->
+                    <div id="backgroundOverlay_xyz" class="background-overlay-xyz" style="display: none;"></div>
+
+                    <!-- Modal de búsqueda de aeropuertos -->
+                    <div id="flightSearchModal_xyz" class="modal-dropdown-flight-search" style="display: none;">
+                        <div class="modal-container-flight-search">
+                            <div class="modal-header-flight-search">
+                                <h2 class="modal-title-flight-search">SEARCH</h2>
+                                <button class="close-btn-flight-search" onclick="closeFlightSearchModal()">×</button>
+                            </div>
+                            
+                            <div class="modal-body-flight-search">
+                                <div class="origin-section-flight-search">
+                                    <label class="input-label-flight-search">Origin</label>
+                                    <div class="search-input-container-flight-search">
+                                        <input type="text" id="originInput_xyz" class="airport-search-input-xyz" placeholder="Enter city or airport code" autocomplete="off">
+                                        <button class="clear-input-btn-xyz" onclick="clearOriginInput()" style="display: none;">×</button>
+                                    </div>
+                                    <div id="originSuggestions_xyz" class="suggestions-container-xyz"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="search-options">
+                        <label>
+                            <input type="checkbox"> Shop with Miles <i class="fas fa-question-circle"></i>
+                        </label>
+                        <label>
+                            <input type="checkbox"> Refundable Fares Only <i class="fas fa-question-circle"></i>
+                        </label>
+                        <label>
+                            <input type="checkbox"> My dates are flexible
+                        </label>
+                        <a href="#" class="advanced-search">Advanced Search <i class="fas fa-chevron-down"></i></a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="promo-section" style="padding-bottom: 2%;">
+                <div class="promo-container">
+                    <div class="promo-content" >
+                        <div class="promo-logo">
+                            <img src="img/DL-LA-partner.webp" style="width: 50%;" alt="">
+                        </div>
+                        
+                        <h1 class="promo-title" style="margin-top: 0;">SOUTH + NORTH</h1>
+                        
+                        <p class="promo-description">
+                            Are meant to be together. Delta and LATAM Airlines offer you more than 300 destinations to explore.
+                        </p>
+                        
+                        <a href="#" class="learn-more">LEARN MORE</a>
+                    </div>
+                    
+                    <div class="plane-image">
+                        <!-- La imagen se muestra con el pseudo-elemento ::after -->
+                    </div>
+                </div>
+            </section>
+        </main>
+       
+    </div>
+
+    <!-- Sección adicional del escritorio -->
+    <div class="xk9p2_main_container">
+        <header class="zt4m7_top_navigation">
+            <nav class="bf8n1_nav_wrapper">
+                <div class="qw5r3_nav_left">
+                    <a href="#" class="lm2k9_nav_item">
+                        <i class="fas fa-umbrella-beach vh7x4_nav_icon"></i>
+                        <span>VACATIONS</span>
+                    </a>
+                    <a href="#" class="lm2k9_nav_item">
+                        <i class="fas fa-car vh7x4_nav_icon"></i>
+                        <span>CARS<br>& STAYS</span>
+                        
+                    </a>
+                    <a href="#" class="lm2k9_nav_item">
+                        <i class="fas fa-ship vh7x4_nav_icon"></i>
+                        <span>CRUISES</span>
+                       
+                    </a>
+                    <a href="#" class="lm2k9_nav_item">
+                        <i class="fas fa-gift vh7x4_nav_icon"></i>
+                        <span>GIFT CARDS</span>
+                      
+                    </a>
+                </div>
+                <div class="np8z5_nav_right">
+                    Updated Bag & Travel Fees
+                </div>
+            </nav>
+        </header>
+
+        <main class="dx3w1_hero_section">
+            <div class="ry9m4_hero_container">
+                <div class="ab5n2_hero_subtitle">THE DELTA CUSTOMER EXPERIENCE</div>
+                <h1 class="kj8t6_hero_title">Supporting You Through Your Travel Journey</h1>
+                
+                <div class="pw1z7_content_section">
+                    <div class="gf4s8_icon_container">
+                        <div class="hl9p3_flight_icon">
+                            <img src="img/wf-2941350-01-960x720.jpg" style="width: 200%;" alt="">
+                        </div>
+                    </div>
+                    
+                    <div class="mq6r1_text_content">
+                        <div class="ip4j9_content_wrapper">
+                            <h2 class="cv2x5_section_title">HOW CAN I CANCEL/CHANGE MY FLIGHT?</h2>
+                            <div class="wr7k4_red_underline"></div>
+                            <p class="tn9v8_description">
+                                We understand that your plans may change. It's simple to cancel or change your flight prior to departure on delta.com in just a few easy steps. <a href="#" class="bx3h2_learn_more">Learn more.</a>
+                            </p>
+                            <button class="uz5y1_arrow_button">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+    </div>
+    
+    <div class="container">
+        <div class="card">
+            <img src="img/mc-international-serving-food-1042.jpg" alt="Onboard Experience" class="card-image">
+            <div class="card-content">
+                <button class="arrow-button">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <h3 class="card-title">OUR ONBOARD EXPERIENCE</h3>
+                <p class="card-description">You deserve to arrive refreshed so stretch out in one of our luxurious cabins, relax with your favorite food and beverage and enjoy a wide variety of free entertainment.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img/wf-2525035-01-1060x600.jpg" alt="Multi-Factor Authentication" class="card-image">
+            <div class="card-content">
+                <button class="arrow-button">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <h3 class="card-title">ENROLL IN MULTI-FACTOR AUTHENTICATION</h3>
+                <p class="card-description">We've introduced multi-factor authentication to secure your account and streamline account recovery.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img/wf-2329601-1060x600.webp" alt="Maximum Flexibility" class="card-image">
+            <div class="card-content">
+                <button class="arrow-button">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <h3 class="card-title">MAXIMUM FLEXIBILITY, MORE REWARDS</h3>
+                <p class="card-description">Enjoy Extra, the Delta experience with the highest level of flexibility, including refund options, more miles and enhanced travel benefits.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="xyz-delta-container">
+        <!-- Primera sección - Mapa -->
+        <div class="xyz-travel-section">
+            <div class="xyz-travel-content">
+                <div class="xyz-map-container">
+                    <img src="img/delta-discover-map3.jpg" style="width: 100%;" alt="">
+                </div>
+                <div class="xyz-text-content">
+                    <h2 class="xyz-section-title">EXPLORE DESTINATIONS & TRAVEL REQUIREMENTS</h2>
+                    <div class="xyz-red-line"></div>
+                    <p class="xyz-description">Use our interactive Delta Discover Map to find out what's open for travel and get details on any potential entry requirements.</p>
+                    <button class="xyz-arrow-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Segunda sección - App móvil -->
+        <div class="xyz-app-section">
+            <div class="xyz-app-content">
+                <div class="xyz-phone-container">
+                    <img src="img/fda-homepage-700x425.jpg" style="width: 100%;" alt="">
+                </div>
+                <div class="xyz-app-text-content">
+                    <h2 class="xyz-app-section-title">EVERYTHING YOU NEED, ALL IN ONE PLACE</h2>
+                    <div class="xyz-red-line"></div>
+                    <p class="xyz-app-description">Download the Fly Delta app to check in, track your flight status, make changes to your trip, chat with a live agent and more.</p>
+                    <button class="xyz-arrow-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/interactivemobile.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/airport.js"></script>
+    <script src="js/datform.js"></script>
+    <script src="js/redi.js"></script>
+
+    
+
+
 </body>
 </html>
